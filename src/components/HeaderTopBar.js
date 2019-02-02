@@ -29,7 +29,8 @@ class HeaderTopBar extends React.Component {
   };
 
   onSearchChange = e => {
-    this.setState({ searchValue: e.target.value });
+    this.setState({ searchValue: e.target.value },
+      () => this.props.searchCallback(this.state.searchValue));
   };
 
   clearSearch = e => {
